@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
-import MainSide from  './Main';
+//import MainSide from  './Main';
 
 
 class NavHeader extends React.Component {
@@ -33,9 +33,6 @@ class NavHeader extends React.Component {
         </LinkContainer>
         
         </Nav>
-
-
-
   </Navbar>
         )
     }
