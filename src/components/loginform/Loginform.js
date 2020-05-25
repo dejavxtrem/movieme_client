@@ -1,49 +1,78 @@
 import React from 'react';
 import './loginform.css';
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+//import Button from 'react-bootstrap/Button'
+import { withContext } from "../../components/AppContext";
+import {
+    Button,
+    FormGroup,
+    FormControl,
+    Feedback,
+    ControlLabel
+  } from 'react-bootstrap';
 
 
 class LoginForm extends React.Component {
     state = {
      email: '',
-     password: ''
+     password: '',
+     errorMessage: ""
     }
 
 
-    // handleChange = (e) => {
-        
-    // }
+
+clearInputs = () => {
+    this.setState({
+        email: "",
+        password: "",
+        errorMessage: ""
+    })
+}
+
+    handleChange = (e) => {
+        const { name, value } = e.target
+        this.setState({
+            [name]: value
+        })
+    }
 
     
-    // handleSubmit = () => {
-    //     e.preventDefault();
-    // }
+    handleLoginSubmit = (e) => {
+        e.preventDefault();
+        this.props.loginInfo(this.state)
+        .then(() => this.clearInputs())
+        .then(() => this.props.history.push("/show")) 
+        .catch(err => {
+            this.setState({errorMessage: err.data})
+        })
+           
+    }
  
      render () {
          return (
-             <Form className="loginformclass">
-         <Form.Group controlId="formBasicEmail">
+             <>
+            
+             <Form className="loginformclass" onSubmit={this.handleLoginSubmit}>
+            <FormGroup>
              <Form.Label>Email address</Form.Label>
-             <Form.Control type="email" placeholder="Enter email"  name="email"   value={this.state.email}   onChange={this.handleChange}/>
-             <Form.Text className="text-muted">
-                 We'll never share your email with anyone else.
-                 </Form.Text>
-             </Form.Group>
+             <FormControl type="email" placeholder="Enter email"  name="email"   value={this.state.email}   onChange={this.handleChange}/>
+             </FormGroup>
  
-             <Form.Group controlId="formBasicPassword">
+             <Form.Group>
                  <Form.Label>Password</Form.Label>
                  <Form.Control type="password" placeholder="Password" name="password"  value={this.state.password} onChange={this.handleChange} />
-             </Form.Group>
-             <Form.Group controlId="formBasicCheckbox">
-                 <Form.Check type="checkbox" label="Check me out" />
              </Form.Group>
              <Button variant="primary" type="submit">
                  Submit
              </Button>
              </Form>
+             {
+                this.state.errorMessage &&
+                <p style={{color: "red"}}>{this.state.errorMessage}</p>
+            }
+             </>
          )
      }
  }
  
- export default LoginForm;
+ export default withContext(LoginForm);

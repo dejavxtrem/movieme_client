@@ -12,8 +12,7 @@ class ShowComponent extends  React.Component {
                     <Col>
                        <div> 
                        <div className="SearchBar">
-                    <input placeholder="Enter A Song, Album, or Artist" onChange={this.handleTermChange} onKeyPress={this.handlePressKey} onClick={this.handleClick}/>
-                    <a onClick={this.search}>SEARCH</a>
+                        <h1>Hello John</h1>
                         </div>
                         </div> 
                     </Col>

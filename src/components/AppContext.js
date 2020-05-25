@@ -8,18 +8,23 @@ let baseURL = process.env.REACT_APP_BASEURL
 class AppContextProvider extends React.Component {
 
     state = {
-        user: {},
-        token: ""
+        user: JSON.parse(localStorage.getItem("user")) || {},
+        token: localStorage.getItem("token") || ""
     }
 
 componentDidMount = () =>{
     this.signUpInfo()
+    this.loginInfo()
 }
   
+
+ //sign-up function context
   signUpInfo = (userData) => {
         return axios.post(`${baseURL}/auth/signup`, userData )
         .then(response => {
             const {user, token} = response.data
+            localStorage.setItem("token", token)
+            localStorage.setItem("user", JSON.stringify(user));
             this.setState ({
                 user,
                 token
@@ -28,11 +33,30 @@ componentDidMount = () =>{
         })
   }
 
+
+//Logging-in function context
+ loginInfo = (credentials) => {
+        return axios.post(`${baseURL}/auth/login`, credentials)
+         .then(response => {
+           const {token, user} = response.data
+           localStorage.setItem('token', token)
+           localStorage.setItem("user", JSON.stringify(user))
+           this.setState({
+               user,
+               token
+           })
+         //dont forgot
+          return response;
+         })
+ }
+
+
   render () {
       return (
         <AppContext.Provider
         value={{
         signUpInfo: this.signUpInfo,  // add this to the value object
+        loginInfo: this.loginInfo
         }}
     >
         {this.props.children}

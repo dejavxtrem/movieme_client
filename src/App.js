@@ -9,6 +9,7 @@ import NavHeader from './components/Header';
 import { Route, Switch, Redirect } from "react-router-dom";
 import SignUpForm from './components/signup/Signform';
 import LoginForm from './components/loginform/Loginform';
+import ShowComponent from './components/showpage/Show'
 
 
 
@@ -40,6 +41,7 @@ class App extends React.Component {
         <Route   exact path= "/home" render={(props) => <Home {...props}/> } />
         <Route   exact path= "/login" render={(props) => <LoginForm {...props}/> } />
         <Route   exact path= "/signup" render={(props) => <SignUpForm {...props}/> } />
+        <Route   exact path= "/show" render={(props) => <ShowComponent {...props}/> } />
       </Switch>
         </Col>
    

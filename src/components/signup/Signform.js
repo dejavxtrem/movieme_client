@@ -1,6 +1,6 @@
 import React from 'react';
 import './loginform.css';
-import { withContext } from "../../components/AppContext"
+import { withContext } from "../../components/AppContext";
 import Form from 'react-bootstrap/Form'
 import {
     Button,
@@ -40,7 +40,7 @@ handleChange = (e) => {
  
 
 handleSubmit = (e) => {
-    console.log(e)
+    //console.log(e)
     e.preventDefault();
      this.props.signUpInfo(this.state)
      .then(() => this.props.history.push("/home"))
