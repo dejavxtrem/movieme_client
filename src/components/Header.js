@@ -52,7 +52,7 @@ class NavHeader extends React.Component {
         </LinkContainer> 
         
         <div>
-        <Button variant="dark">Log Out</Button>{' '}
+        <Button variant="dark" onClick={() => this.props.logOut}>Sign Out</Button>{' '}
         </div>
      
         </React.Fragment>

@@ -22,6 +22,7 @@ class AppContextProvider extends React.Component {
 componentDidMount = () =>{
     this.signUpInfo()
     this.loginInfo()
+    this.logOut()
     this.getTopRateTvShow()
     this.getTopRateTvShowPage2()
     this.getTopRatedMovie()
@@ -108,7 +109,14 @@ getTopRated = () => {
      })
 
 }
-
+ logOut = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    this.setState({
+        user: {},
+        token: ""
+    })
+ }
 
 
 
@@ -118,6 +126,7 @@ getTopRated = () => {
         value={{
         signUpInfo: this.signUpInfo,  // add this to the value object
         loginInfo: this.loginInfo,
+        logOut: this.logOut,
         getTopRateTvShow: this.state.topRated,
         topRated2: this.state.topRated2,
         popularMovies: this.state.popularMovies,

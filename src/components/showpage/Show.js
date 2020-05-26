@@ -30,7 +30,6 @@ class ShowComponent extends  React.Component {
 
 
     render () {
-        {console.log(this.state.value)}
         return (
            
             <React.Fragment>
