@@ -10,14 +10,10 @@ class Home extends React.Component {
         return (
             <>
       <Row >
-        <Col >
+        <Col className="colcheck">
         <JumbotronClass/>
         </Col>
       </Row>
-
-      <Row>
-      <TitleImg/>
-      </Row> 
       </>
         )
     }

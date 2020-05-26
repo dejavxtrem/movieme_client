@@ -1,0 +1,32 @@
+.showpage {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+   
+    margin-bottom: 50px;
+    border-style: dotted;
+    height: 900px;
+  }
+
+  .dropdownclass {
+    Display: flex;
+    border-style: dotted;
+    align-items: center;
+    height: 150px;
+    justify-content: center;
+    margin-top: 66px;
+    margin-bottom: 20px;
+  }
+
+  
+  .contentrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-style: dotted;
+    width: 100%;
+    min-height: 80vh;
+    margin-left: 0px;
+    margin-right: 0px;
+  }

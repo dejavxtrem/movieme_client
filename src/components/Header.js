@@ -5,13 +5,18 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
+import { withContext } from "./AppContext";
 //import MainSide from  './Main';
+import Button from 'react-bootstrap/Button'
 
 
 class NavHeader extends React.Component {
     render () {
+        {console.log(this.props.token)}
         return (
+            
             <Navbar expand="lg" variant="dark" bg="dark" fixed="top" className="justify-content-end">
+        
             <img
             alt=""
             src="/logo.svg"
@@ -20,22 +25,49 @@ class NavHeader extends React.Component {
             className="d-inline-block align-top"
           />{' '}
         <Nav className="mr-auto"> 
-        <LinkContainer  Link to="/home">
+        {!this.props.token ?  
+        <React.Fragment>
+         <LinkContainer  Link to="/home">
         <Nav.Link  >Home</Nav.Link>
         </LinkContainer>    
         
         <LinkContainer to="/login">
         <Nav.Link >Login</Nav.Link>
         </LinkContainer>
-        
+
         <LinkContainer to="/signup">
         <Nav.Link >Sign-up</Nav.Link>
-        </LinkContainer>
+        </LinkContainer> 
+        </React.Fragment>
+
+        : 
+
+        <React.Fragment>
+        <LinkContainer to="/show">
+        <Nav.Link >Show</Nav.Link>
+        </LinkContainer> 
+
+        <LinkContainer to="/Movielist">
+        <Nav.Link >MovieList</Nav.Link>
+        </LinkContainer> 
         
+        <div>
+        <Button variant="dark">Log Out</Button>{' '}
+        </div>
+     
+        </React.Fragment>
+        
+        }   
+ 
+       
+    
+ 
+
         </Nav>
   </Navbar>
         )
-    }
+        
+}
 }
 
-export default NavHeader;
+export default withContext(NavHeader);
