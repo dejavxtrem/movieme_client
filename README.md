@@ -15,6 +15,8 @@ Bcrpt,
 Express,
 Javascript,
 JWTS(Json webtoken),
+Axios,
+Fetch
 
 
 # Back-End Relationship:
