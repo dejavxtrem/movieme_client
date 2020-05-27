@@ -117,7 +117,7 @@ getTopRated = () => {
      Promise.all([firstPageCall, secondPageCall])
      .then(values => Promise.all(values.map(value => value.json())))
      .then(apivalues => {
-         console.log(apivalues[1].results)
+         //console.log(apivalues[1].results)
          this.setState({topMovies1: apivalues[0].results })
          this.setState({topMovies2: apivalues[1].results})
      })

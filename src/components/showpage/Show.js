@@ -11,6 +11,7 @@ import { withContext } from "../../components/AppContext";
 import TvShowContent from "../../components/moviecontent/Tvcontent"
 import MovieContent from "../../components/moviecontent/moviecontent"
 import TopMovieContent from "../../components/moviecontent/Topmovie"
+import  YouTubeVideo from "../../components/Youtubevideo"
 import {Redirect, Route} from 'react-router-dom';
 
 
@@ -58,7 +59,7 @@ class ShowComponent extends  React.Component {
                                       case 'Top rated':
                                         return <TopMovieContent />;
                                       default:
-                                        return ' ';
+                                        return  <YouTubeVideo/> ;
                                     }
                                   })()
                               

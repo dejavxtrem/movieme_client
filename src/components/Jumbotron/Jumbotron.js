@@ -13,7 +13,7 @@ class JumbotronClass extends React.Component {
             <div className="content">
               <img className="logo" src="http://www.returndates.com/backgrounds/narcos.logo.png" alt="narcos background" />
               <h2>Season 2 now available</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id quam sapiente unde voluptatum alias vero debitis, magnam quis quod.</p>
+              <p>The true story of Colombia's infamously violent and powerful drug cartels fuels this gritty gangster drama series</p>
               <div className="button-wrapper">
               </div>
             </div>
