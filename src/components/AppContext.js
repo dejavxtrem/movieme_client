@@ -1,5 +1,7 @@
 import React from 'react';
 import axios  from "axios";
+import {Redirect, Route} from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 const AppContext = React.createContext();
 
 
@@ -20,16 +22,14 @@ class AppContextProvider extends React.Component {
     }
 
 componentDidMount = () =>{
-    this.signUpInfo()
-    this.loginInfo()
-    this.logOut()
+    //this.signUpInfo()
+    //this.loginInfo()
+   // this.logOut()
     this.getTopRateTvShow()
     this.getTopRateTvShowPage2()
     this.getTopRatedMovie()
     this.getTopRatedMovie2()
-    this.getTopRated()
-    
-    
+    this.getTopRated()   
 }
   
 
@@ -42,7 +42,7 @@ componentDidMount = () =>{
             localStorage.setItem("user", JSON.stringify(user));
             this.setState ({
                 user,
-                token
+                token,
             })
             return response
         })
@@ -61,8 +61,22 @@ componentDidMount = () =>{
                token
            })
          //dont forgot
-          return response;
+     
+            return response;
+            
          })
+ }
+
+ logOut = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    this.setState({
+        user: {},
+        token: ""
+    })
+    
+    console.log(this.props.history)
+    //history.push("/login");
  }
 
 //fetch data for Most popolar tv shows in the world
@@ -109,14 +123,7 @@ getTopRated = () => {
      })
 
 }
- logOut = () => {
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
-    this.setState({
-        user: {},
-        token: ""
-    })
- }
+
 
 
 
@@ -133,7 +140,8 @@ getTopRated = () => {
         popularMovies2: this.state.popularMovies2,
         topMovies1: this.state.topMovies1,
         topMovies2: this.state.topMovies2,
-        token: this.state.token
+        token: this.state.token,
+        user: this.state.user
         
 
         }}

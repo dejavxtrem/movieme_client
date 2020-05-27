@@ -1,22 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap');
 
 
-.loginformclass {
+
+.formclass {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     height: 900px;
-    background-image: url(https://images7.alphacoders.com/107/1074445.jpg);
+    background-image: url(https://images5.alphacoders.com/102/1029459.jpg);
     background-size: cover;
     min-height: 1000px;
-    width: 100%;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     color: whitesmoke;
-  }
-
-  .col {
-    padding-right: 0px;
-    padding-left: 0px;
   }

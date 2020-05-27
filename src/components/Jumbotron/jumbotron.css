@@ -1,5 +1,4 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap');
 
 .Hero {
     width: 100%;
@@ -22,7 +21,18 @@
   }
   .Hero .content p {
     width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: whitesmoke;
   }
+
+  .Hero .content h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: whitesmoke;
+  }
+
+  
   .Hero .content .button-wrapper {
     display: -webkit-box;
     display: -webkit-flex;

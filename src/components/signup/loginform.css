@@ -1,9 +1,0 @@
-.formclass {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-    border-style: dotted;
-    height: 900px;
-  }

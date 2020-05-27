@@ -38,10 +38,11 @@ class App extends React.Component {
       <Row bsPrefix="switchclass">
         <Col>
         <Switch>
-        <Route   exact path= "/home" render={(props) => <Home {...props}/> } />
+        <Route   exact path= "/" render={(props) => <Home {...props}/> } />
         <Route   exact path= "/login" render={(props) => <LoginForm {...props}/> } />
         <Route   exact path= "/signup" render={(props) => <SignUpForm {...props}/> } />
         <Route   exact path= "/show" render={(props) => <ShowComponent {...props}/> } />
+        <Redirect to="/" />
       </Switch>
         </Col>
    

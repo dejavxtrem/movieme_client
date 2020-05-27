@@ -3,6 +3,7 @@ import './loginform.css';
 import Form from 'react-bootstrap/Form'
 //import Button from 'react-bootstrap/Button'
 import { withContext } from "../../components/AppContext";
+import Col from 'react-bootstrap/Col'
 import {
     Button,
     FormGroup,
@@ -50,8 +51,9 @@ clearInputs = () => {
  
      render () {
          return (
-             <>
-            
+
+            <Col bsPrefix="rowedit">
+           
              <Form className="loginformclass" onSubmit={this.handleLoginSubmit}>
             <FormGroup>
              <Form.Label>Email address</Form.Label>
@@ -70,7 +72,8 @@ clearInputs = () => {
                 this.state.errorMessage &&
                 <p style={{color: "red"}}>{this.state.errorMessage}</p>
             }
-             </>
+    
+             </Col>
          )
      }
  }

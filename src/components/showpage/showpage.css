@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap');
+
+
 .showpage {
     display: flex;
     flex-flow: column nowrap;
@@ -10,12 +13,14 @@
 
   .dropdownclass {
     Display: flex;
-    border-style: dotted;
     align-items: center;
     height: 150px;
     justify-content: center;
     margin-top: 66px;
     margin-bottom: 20px;
+    background: linear-gradient(to bottom, #221f1f 0%, rgba(34, 34, 34, 0) 100%);
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
   }
 
   
@@ -24,9 +29,9 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    border-style: dotted;
     width: 100%;
     min-height: 80vh;
     margin-left: 0px;
     margin-right: 0px;
+    background: linear-gradient(to bottom, #221f1f 0%, rgba(34, 34, 34, 0.5) 100%);
   }

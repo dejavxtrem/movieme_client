@@ -1,5 +1,5 @@
 import React from 'react';
-import './loginform.css';
+import './signupform.css';
 import { withContext } from "../../components/AppContext";
 import Form from 'react-bootstrap/Form'
 import {
@@ -18,7 +18,8 @@ class SignUpForm extends React.Component {
    state = {
     name: '',
     email: '',
-    password: ''
+    password: '',
+    errorMessage: ""
    }
 
 clearInputs = () => {
@@ -26,7 +27,7 @@ clearInputs = () => {
         name: "",
         email: "",
         password: "",
-
+        errorMessage: ""
     })
 }
 
@@ -43,7 +44,12 @@ handleSubmit = (e) => {
     //console.log(e)
     e.preventDefault();
      this.props.signUpInfo(this.state)
-     .then(() => this.props.history.push("/home"))
+     .then(() => this.clearInputs())
+     .then(() => this.props.history.push("/show"))
+     .catch (err => {
+        this.setState({errorMessage: err.data})
+     })
+    //  .then(() => this.props.history.push("/home"))
     }
 
 
@@ -52,7 +58,9 @@ handleSubmit = (e) => {
 
     render () {
         return (
+            <div>
 
+            
             <Form className="formclass" onSubmit={this.handleSubmit}>
           <FormGroup >
             <Form.Label>Name</Form.Label>
@@ -72,6 +80,11 @@ handleSubmit = (e) => {
                 Submit
             </Button>
             </Form>
+            {
+                this.state.errorMessage &&
+                <p style={{color: "red"}}>{this.state.errorMessage}</p>
+            }
+            </div>
         )
     }
 }

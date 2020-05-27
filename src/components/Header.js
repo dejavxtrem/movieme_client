@@ -8,14 +8,15 @@ import { LinkContainer } from "react-router-bootstrap";
 import { withContext } from "./AppContext";
 //import MainSide from  './Main';
 import Button from 'react-bootstrap/Button'
+import ToggleButton from 'react-bootstrap/ToggleButton'
+import './header.css';
 
 
 class NavHeader extends React.Component {
     render () {
-        {console.log(this.props.token)}
         return (
             
-            <Navbar expand="lg" variant="dark" bg="dark" fixed="top" className="justify-content-end">
+            <Navbar expand="lg" variant="dark" bg="dark" fixed="top" className="justify-content-end" className="headercss">
         
             <img
             alt=""
@@ -28,7 +29,7 @@ class NavHeader extends React.Component {
         {!this.props.token ?  
         <React.Fragment>
          <LinkContainer  Link to="/home">
-        <Nav.Link  >Home</Nav.Link>
+        <Nav.Link >Home</Nav.Link>
         </LinkContainer>    
         
         <LinkContainer to="/login">
@@ -36,7 +37,7 @@ class NavHeader extends React.Component {
         </LinkContainer>
 
         <LinkContainer to="/signup">
-        <Nav.Link >Sign-up</Nav.Link>
+        <Nav.Link >Sign-Up</Nav.Link>
         </LinkContainer> 
         </React.Fragment>
 
@@ -51,9 +52,9 @@ class NavHeader extends React.Component {
         <Nav.Link >MovieList</Nav.Link>
         </LinkContainer> 
         
-        <div>
-        <Button variant="dark" onClick={() => this.props.logOut}>Sign Out</Button>{' '}
-        </div>
+        
+        <Button variant="dark" onClick={ this.props.logOut}>Sign Out</Button>
+ 
      
         </React.Fragment>
         
