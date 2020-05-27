@@ -20,7 +20,7 @@ A simple Entertainment App that allows you to search for top rated movies, popul
 
 
 # Back-End Relationship:
-Mongo Models
+One to One
 
 # User stories:
 * User should be able create a user account.
