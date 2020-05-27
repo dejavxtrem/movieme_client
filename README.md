@@ -5,18 +5,18 @@
 A simple Entertainment App that allows you to search for top rated movies, popular tv shows and top rated movie in world. Also create a movie playlist for future reference
 
 # Technologies used:
-React, 
-Mongo,
-ReactBootstrap, 
-External API(www.themoviedb.org),
-React-Router,
-React-Context,
-Bcrpt,
-Express,
-Javascript,
-JWTS(Json webtoken),
-Axios,
-Fetch
+*React, 
+*Mongo,
+*ReactBootstrap, 
+*External API(www.themoviedb.org),
+*React-Router,
+*React-Context,
+*Bcrpt,
+*Express,
+*Javascript,
+*JWTS(Json webtoken),
+*Axios,
+*Fetch
 
 
 # Back-End Relationship:
