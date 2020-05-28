@@ -34,5 +34,7 @@ One to One
 * Implement more search options
 * Implement the User error feature
 * Implement notification of new rated movies
+* Implement Web Movie player
+* Implement third party Authentication with Hulu, Netflix
 
 https://movieme-client.herokuapp.com/
