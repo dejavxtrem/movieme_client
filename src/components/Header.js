@@ -12,19 +12,14 @@ import ToggleButton from 'react-bootstrap/ToggleButton'
 import './header.css';
 
 
+
 class NavHeader extends React.Component {
     render () {
         return (
             
             <Navbar expand="lg" variant="dark" bg="dark" fixed="top" className="justify-content-end" className="headercss">
         
-            <img
-            alt=""
-            src="/logo.svg"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-          />{' '}
+           {' '}
         <Nav className="mr-auto"> 
         {!this.props.token ?  
         <React.Fragment>
